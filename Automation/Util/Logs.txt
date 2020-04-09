@@ -1,0 +1,15 @@
+09:02:58,380 root INFO Info logs
+09:14:36,671 root INFO this is an info log
+09:20:37,446 root ERROR This is an exception log
+Traceback (most recent call last):
+  File "C:\Users\krishna.teja.taduri\PycharmProjects\Automation\Util\ExcelUtility.py", line 18, in open_excel
+    return load_workbook(self.path).get_sheet_by_name(self.sheet_name)
+  File "C:\Users\krishna.teja.taduri\PycharmProjects\Automation\venv\lib\site-packages\openpyxl\reader\excel.py", line 312, in load_workbook
+    reader = ExcelReader(filename, read_only, keep_vba,
+  File "C:\Users\krishna.teja.taduri\PycharmProjects\Automation\venv\lib\site-packages\openpyxl\reader\excel.py", line 124, in __init__
+    self.archive = _validate_archive(fn)
+  File "C:\Users\krishna.teja.taduri\PycharmProjects\Automation\venv\lib\site-packages\openpyxl\reader\excel.py", line 96, in _validate_archive
+    archive = ZipFile(filename, 'r')
+  File "C:\Users\krishna.teja.taduri\AppData\Local\Programs\Python\Python38-32\lib\zipfile.py", line 1216, in __init__
+    self.fp = io.open(file, filemode)
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\krishna.teja.taduri\\Desktop\\Automation_WorkPln_V0.1.xlsx'
