@@ -1,12 +1,12 @@
 {  
     "url": {  
         "PolicyCenter": {
-			"ST": "https://gwdisc.fslabs.io/pc/PolicyCenter.do",
-			"PT": "https://gwdisc.fslabs.io/pc/PolicyCenter.do"
+			"ST": "https://su:gw@gwdisc.fslabs.io/pc/PolicyCenter.do",
+			"PT": "https://su:gw@gwdisc.fslabs.io/pc/PolicyCenter.do"
 		},
 		"ClaimCenter": {
-			"ST": "https://gwdisc.fslabs.io/cc/ClaimCenter.do",
-			"PT": "https://gwdisc.fslabs.io/cc/ClaimCenter.do"
+			"ST": "https://su:gw@gwdisc.fslabs.io/cc/ClaimCenter.do",
+			"PT": "https://su:gw@gwdisc.fslabs.io/cc/ClaimCenter.do"
 		}		
     }   
 }  

@@ -1,5 +1,6 @@
-from Util import ExcelUtility
-from Framework.TestRunner import TestRunner
+from Automation.Util import ExcelUtility
+from Automation.Framework.TestRunner import TestRunner
+import concurrent.futures
 
 
 class Initiator:
@@ -66,9 +67,17 @@ class Initiator:
             num += 1
         print(self.current_test_set)
 
-    def kick_off_tests(self):
+    '''def kick_off_tests(self):
         for test in self.current_test_set:
-            TestRunner().runner(test)
+            TestRunner().runner(test)'''
+
+
+    def kick_off_tests(self):
+        '''Method to do Multi process execution'''
+        if(__name__=="__main__"):
+            with concurrent.futures.ProcessPoolExecutor() as executor:
+                for test in self.current_test_set:
+                    executor.submit(TestRunner().runner,test)
 
 
 initiator = Initiator()
