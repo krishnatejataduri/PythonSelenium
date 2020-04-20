@@ -190,7 +190,7 @@ class TestRunner:
 
                     step_num += 1
                 except Exception as loop_exception:
-                    user_choice = DebugUtil.show_message(screen_name=self.g_screen_name,object_or_func_name=self.g_object_name,action=self.g_action,error_details=(str(loop_exception).split("\n")[0])[:300])
+                    user_choice = DebugUtil.show_message(test_name=self.g_test_name,screen_name=self.g_screen_name,object_or_func_name=self.g_object_name,action=self.g_action,error_details=(str(loop_exception).split("\n")[0])[:300])
                     if (user_choice == 'Retry'):
                         self.g_report.add_step("Warning",
                                                f"Screen: {self.g_screen_name}\nObject: {self.g_object_name}\nAction: {self.g_action}\nError Info: \n"+(str(loop_exception).split("\n")[0])[:300])
