@@ -55,6 +55,8 @@ class TestRunner:
             pass
             # Add code for opening IE browser
         self.g_driver.implicitly_wait(time_to_wait=30)
+        self.g_report.add_step("Pass",
+                               f"Launched {self.g_browser} browser window.")
 
     def object_builder(self):
         if self.g_locator_type.upper() == 'XPATH':

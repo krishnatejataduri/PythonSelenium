@@ -5,11 +5,11 @@ from wx._core import FontStyle
 
 class DebugUtil(wx.Frame):
 
-    def __init__(self, parent,screen_name, object_or_func_name,action,error_details):
+    def __init__(self, parent,test_name,screen_name, object_or_func_name,action,error_details):
         self.selected_option = 'Retry'
         wx.Frame.__init__(self, parent, size=[500, 300])
         self.IsShownOnScreen()
-        self.SetTitle("Error!")
+        self.SetTitle(f"Error! - {test_name}")
         self.CenterOnScreen()
         self.EnableCloseButton(enable=False)
         self.SetBackgroundColour("#E6E6FA")
@@ -58,9 +58,9 @@ class DebugUtil(wx.Frame):
         self.selected_option = "Ignore"
         self.Close()
 
-def show_message(screen_name,object_or_func_name,action,error_details):
+def show_message(test_name,screen_name,object_or_func_name,action,error_details):
     app = wx.App(False)
-    debug = DebugUtil(None,screen_name,object_or_func_name,action,error_details)
+    debug = DebugUtil(None,test_name,screen_name,object_or_func_name,action,error_details)
     app.MainLoop()
     return debug.selected_option
 

@@ -68,7 +68,7 @@ class ExcelUtility:
         config_details = {'TestSetName': self.get_cell_value("TestSetName", current_row),
                           'Environment': self.get_cell_value("Environment", current_row),
                           'Parallel': self.get_cell_value("Parallel", current_row),
-                          'Instances': self.get_cell_value("Instances", current_row),
+                          #'Instances': self.get_cell_value("Instances", current_row),
                           'Remote': self.get_cell_value("Remote", current_row)}
 
         return config_details

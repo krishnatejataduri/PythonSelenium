@@ -17,9 +17,9 @@ class Initiator:
                  ".xlsx", sheet_name="Configuration").get_config_info()
         self.test_list = ExcelUtility.ExcelUtility(
             path="C:/Users/krishna.teja.taduri/PycharmProjects/Tests/Runner.xlsx", sheet_name="Runner").get_test_list()
-        TestRunner.g_test_set = self.exec_config_dict.get('TestSetName');
-        TestRunner.g_environment = self.exec_config_dict.get('Environment');
-        TestRunner.g_remote = self.exec_config_dict.get('Remote');
+        TestRunner.g_test_set = self.exec_config_dict.get('TestSetName')
+        TestRunner.g_environment = self.exec_config_dict.get('Environment')
+        TestRunner.g_remote = self.exec_config_dict.get('Remote')
         print(self.exec_config_dict)
         print(self.test_list)
 
@@ -75,7 +75,7 @@ class Initiator:
     def kick_off_tests(self):
         '''Method to do Multi process execution'''
         if(__name__=="__main__"):
-            with concurrent.futures.ProcessPoolExecutor() as executor:
+            with concurrent.futures.ProcessPoolExecutor(max_workers=int(self.exec_config_dict.get('Parallel'))) as executor:
                 for test in self.current_test_set:
                     executor.submit(TestRunner().runner,test)
 
